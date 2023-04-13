@@ -10,7 +10,7 @@ public class Torneos {
         int numEquipos = equipos.size();
         
         if (numEquipos%2 != 0) {
-        	equipos.add("X"); // Agregar equipo "Descansa" si el número de equipos es impar
+        	equipos.add("X"); // Agregar equipo "X:Descansa" si el número de equipos es impar
         	numEquipos++;
         }
         
@@ -32,6 +32,14 @@ public class Torneos {
         return fullMatch;
     }
 
+    /**
+     * Ejemplo de rotacion:
+     * Se mantiene estatico el primer elementos y rotacion antihorario
+     * el resto de elementos
+     * A B C X
+     * A X B C
+     * A C X B
+     * */
     private static void pivotePrimerElementoRotar(ArrayList<String> subEquipos) {
     	   String temp = subEquipos.remove(subEquipos.size() - 1);
     	   subEquipos.add(1, temp);
